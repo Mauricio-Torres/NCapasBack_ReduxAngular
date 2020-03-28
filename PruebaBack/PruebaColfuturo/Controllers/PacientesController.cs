@@ -1,7 +1,9 @@
 ﻿using Behavior.Manager;
 using Behavior.Model;
 using DataConect.Utils;
+using Grpc.Core.Logging;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,10 +15,12 @@ namespace PruebaTecnica.Controllers
     public class PacientesController : ControllerBase
     {
         private readonly PacienteManager _context;
+        private readonly ILogger<PacientesController> logger;
 
-        public PacientesController(PacienteManager context)
+        public PacientesController(PacienteManager context, ILogger<PacientesController> _logger)
         {
             _context = context;
+            logger = _logger;
         }
 
         // GET: api/Pacientes

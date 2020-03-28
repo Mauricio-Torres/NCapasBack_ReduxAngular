@@ -11,7 +11,7 @@ namespace DataConect.Utils
         {
             try
             {
-                string AppPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+                string AppPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
                 AppPath = AppPath.Replace(@"file:\", "") + @"\";
 
                 string fname = AppPath + "Log.txt";
