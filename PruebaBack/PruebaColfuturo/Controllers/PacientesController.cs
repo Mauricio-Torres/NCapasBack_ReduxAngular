@@ -1,10 +1,8 @@
 ﻿using Behavior.Manager;
 using Behavior.Model;
 using DataConect.Utils;
-using Grpc.Core.Logging;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -36,6 +34,7 @@ namespace PruebaTecnica.Controllers
             }
             catch (Exception ex)
             {
+                logger.LogTrace(3,ex,"");
                 Logger.Logguer(System.Reflection.MethodBase.GetCurrentMethod().Name, "Exception ", ex.Message);
             }
 
